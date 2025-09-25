@@ -6,7 +6,7 @@ To develop a Django application to store and retrieve data from Movies Database 
 
 ## ENTITY RELATIONSHIP DIAGRAM
 
-
+![alt text](<WhatsApp Image 2025-09-13 at 11.18.52_604e6aa4.jpg>)
 
 ## DESIGN STEPS
 
@@ -23,12 +23,31 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+from django.db import models
+from django.contrib import admin
 
+# Create your models here.
+```
+class car(models.Model):
+    car_id = models.IntegerField(primary_key=True)
+    brand = models.CharField(max_length=50)
+    model= models.CharField(max_length=50)
+    price = models.IntegerField()
+    year = models.DateField()
+
+class carAdmin(admin.ModelAdmin):
+    list_display = ('car_id','brand','model','price','year')
+```
+
+```from django.contrib import admin
+from . models import car, carAdmin
+admin.site.register(car, carAdmin)
+```
 
 
 ## OUTPUT
 
-Include the screenshot of your admin page.
+![alt text](<Screenshot 2025-09-25 204225.png>)
 
 
 ## RESULT
